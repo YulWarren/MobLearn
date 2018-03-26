@@ -1,0 +1,8 @@
+
+<template name="tempFooter"> 
+  <view class="header">    
+    <view>
+      © 2017-2018 MobLearn powered by WordPress
+    </view>
+  </view>
+</template>
