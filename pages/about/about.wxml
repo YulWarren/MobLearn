@@ -1,0 +1,17 @@
+
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../templates/header.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+<view class="container" style="display:{{display}}">
+  <template is="tempHeader" />
+    <view class="wrapper">
+      <view class="excerpt">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <button size='mini' bindtap='gotoMy' class='goBack'>返回</button>
+    <view class="copyright">
+      <template is="tempCopyright" />
+    </view>
+</view>

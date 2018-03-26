@@ -1,0 +1,38 @@
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+<view class="showerror" style="display:{{showerror}}">
+  <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
+  <view class="errortext">
+    暂时无法访问网络,下拉重试...
+  </view>
+</view>
+<view style="display:{{showallDisplay}}">
+  <view style="display:{{floatDisplay}}">
+
+    <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+      <image src='../../images/search-background.jpg' style='width:100%;' class='search-background'></image>
+      <view class="search-pancel">
+        <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
+        <button class="search-button" form-type="submit" size="mini" plain="true">
+          <icon type="search" color="#fff" size="20" />
+        </button>
+      </view>
+    </form>
+  </view>
+  <view class="container">
+    <!-- 加载图文列表 -->
+    <view class="index-container">
+      <template is="tempCommonList" data="{{postsList}}" />
+      <view class="loadingmore" style="display:{{floatDisplay}}">
+        <view hidden="{{isLastPage}}">
+          <button class="more-button" formType="submit" size="mini" bindtap="loadMore">加载更多...</button>
+        </view>
+        <view class="no-more" hidden="{{!isLastPage}}">---无更多文章---</view>
+      </view>
+      <view class="copyright" style="display:{{floatDisplay}}">
+        <template is="tempCopyright" />
+      </view>
+    </view>
+  </view>
+</view>

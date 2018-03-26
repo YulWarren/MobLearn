@@ -1,0 +1,112 @@
+
+.readlog-container {
+  width: 100%;
+  height: 100%;
+  /* position: relative;  */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.about-container{
+  position: absolute;
+  top: 15rpx;
+  right: 15rpx;
+}
+.about {
+  line-height: 1.5;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 25rpx;
+  background-color: #ffa400;
+  position: relative;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   background:url(https://www.moblearn.club/wp-content/uploads/2018/03/website-search1.jpg);    
+  /* background-color: #8d4bbb; */
+  background-size: 750rpx 320rpx;
+  opacity: 0.9; 
+  height: 320rpx;
+  width: 100%;
+  
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 36rpx 15rpx 24rpx;
+  border-radius: 50%;
+  
+}
+
+.dec {
+  margin-top: 50rpx;
+}
+
+.dec-text {
+  font-size: 25rpx;
+  color: #757575;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 35rpx;
+}
+.container {
+  text-align: left;
+  left: 5rpx;
+}
+.log-list {
+  flex-direction: column;
+  margin-left: 10rpx;
+  padding: 32rpx 0; 
+  text-align: left;
+}
+
+.log-items {
+  margin-top: 30rpx;
+  border-bottom: solid 0.5rpx #8d4bbb;
+  padding: 0rpx 0rpx 30rpx;
+  font-size: 28rpx;
+  line-height: 25rpx;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #959595;
+}
+
+.log-text {
+  margin: 32rpx 0;
+  font-size: 30rpx;
+  color: #757575;
+  word-wrap:break-word;
+  word-break:break-all; 
+}
+
+.top-bar {
+   height: 100rpx; 
+  background: #fff;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.top-bar-item {
+  display: inline-block;
+  background: #fff;
+  width: 25%;
+  color: #9babba;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 35rpx;
+}
+
+.top-bar-item-Selected {
+  border-bottom: 1px solid #8d4bbb;
+  color: #8d4bbb;
+}

@@ -1,0 +1,47 @@
+@import "../../wxParse/wxParse.wxss";
+.wrapper {
+  padding: 5rpx;
+}
+
+.excerpt {
+  color: #626262;
+  font-size: 32rpx;
+  line-height: 64rpx;
+  text-align: left;
+}
+
+.h2 {
+  clear: both;
+  border-width: 1px 0;
+  color: #666;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  font-weight: bold;
+}
+
+.clearfix {
+    margin: 5px 15px;
+    display: inline-block;
+}
+.goBack{
+  margin-top: 50rpx;
+  color: #fff;
+  background-color: #8b4bbb;
+}
+.img-like {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  text-align: center;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+
+.gravatarLikeImg {
+  margin-top: 4px;
+  border-radius: 50%;
+  height: 60rpx;
+  width: 60rpx;
+  margin-right: 20rpx;
+}
