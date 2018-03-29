@@ -15,7 +15,7 @@
   float: left;
   overflow: hidden;
   width: 300rpx;
-  margin-bottom: 60rpx;
+  margin-bottom: 15rpx;
   margin-right: 48rpx;
   background: #fff;
 }
@@ -27,7 +27,7 @@
 }
 
 .content-title {
-  padding: 16rpx 0rpx;
+  padding: 3rpx 0rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -35,7 +35,7 @@
 
 .content-title text {
   font-size: 30rpx;
-  line-height: 30rpx;
+  line-height: 15rpx;
   color: #1b1b1b;
 }
 
@@ -51,20 +51,19 @@
 }
 .topic-name {
  float: left; 
- width: 55%;
+ width: 100%;
  overflow: auto;
+ margin-top: -15rpx;
 }
-.topic-img {
-  float: right; 
-  text-align: right;
-  width: 40%;
-  margin-right: 10rpx;
-  z-index: 1;
-}
+
 .img-menu {
   width: 80rpx;
   height: 40rpx;
-  display: inline-block;
   text-align: center;
   border-radius: 12rpx;
+  position: absolute;
+  float: right; 
+  z-index: 1000;
+  top: 10rpx;
+  right: 10rpx;
 }

@@ -46,7 +46,7 @@
 }
 
 .topic-content-title-line{
-  width: 55px;
+  width: 65px;
   padding: 16rpx 0rpx;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -57,8 +57,14 @@
   left: 64rpx;
   top: 180rpx;
 }
-
-
+.posts-count {
+  z-index: 3;
+  position: absolute;
+  font-size: 34rpx;
+  left: 60rpx;
+  top: 285rpx;
+  color: #fff;
+}
 .topic-content-brief {
   overflow: hidden;
   text-overflow: ellipsis;

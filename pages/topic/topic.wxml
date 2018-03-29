@@ -4,15 +4,11 @@
   <view class="topic-common-list">
     <block wx:key="id" wx:for="{{categoriesList}}">
       <view class="list-item">
-        <view>
+        <image src="../../images/{{item.subimg}}" data-subflag="{{item.subflag}}" data-id="{{item.id}}" catchtap="postsub" class="img-menu" ></image>
           <image src="{{item.category_thumbnail_image}}" class="cover" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex"></image>
-        </view>
         <view class="content-title" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">
           <view class="topic-name">
             <text>{{item.name}}</text>
-          </view>
-          <view class="topic-img">
-            <image src="../../images/{{item.subimg}}" data-subflag="{{item.subflag}}" data-id="{{item.id}}" catchtap="postsub" class="img-menu" ></image>
           </view>
         </view>
         <view class="content-brief" data-item="{{item.name}}" data-id="{{item.id}}">

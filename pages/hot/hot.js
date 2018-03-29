@@ -60,7 +60,6 @@ Page({
     var self = this;   
     self.fetchPostsData(self.data);
   },
-
   onTapTag: function (e) {
     var self = this;
     var tab = e.currentTarget.id;
@@ -124,36 +123,30 @@ Page({
               if (item.post_thumbnail_image == null || item.post_thumbnail_image == '') {
                 item.post_thumbnail_image = '../../images/logo7000.png';
               }
-              item.post_date = util.cutstr(strdate, 10, 1);
+              item.post_date = util.cutstr(strdate, 10, 1); 
+
+              
               self.setData({
-                postsList:self.data.postsList.concat(item)
+                postsList: self.data.postsList.concat(item)
               })
+              if (tab = '1') {
+                self.data.postsList.sort(self.compare('comment_total'))
+              }
+              if (tab = '2') {
+                self.data.postsList.sort(self.compare('pageviews'))
+              }
+              if (tab = '3') {
+                self.data.postsList.sort(self.compare('like_count'))
+              }
+              self.setData({
+                postsList: self.data.postsList
+              })
+              console.log(self.data.postsList)
             }
           })
+          
         })
         
-        
-        // self.setData({
-        //   postsList: self.data.postsList.concat(response.data.map(function (item) {
-        //       wx.request({
-        //       url: 'https://www.moblearn.club/wp-json/wp/v2/posts/' + item.post_id,
-        //       success: function (res) {
-
-        //         var name = res.data.category_name
-        //         item.category_name=name
-        //         console.log('1',self.data.postsList)
-        //       }
-        //     })
-        //     var strdate = item.post_date
-        //     if (item.post_thumbnail_image == null || item.post_thumbnail_image == '') {
-        //       item.post_thumbnail_image = '../../images/logo7000.png';
-        //     }
-        //     item.post_date = util.cutstr(strdate, 10, 1);
-        //     console.log(item)
-        //     return item;
-        //   })),
-        // })
-        // console.log(self.data.postsList)
       } else if (response.statusCode === 404) { 
         console.log('加载数据失败,可能缺少相应的数据'); 
       } 
@@ -172,7 +165,20 @@ Page({
         wx.hideLoading();
         }, 1500);
         });    
-  }, 
+  },
+  compare:function(propertyName) {
+    return function(obj1,obj2) {
+      var value1 = obj1[propertyName];
+      var value2 = obj2[propertyName];
+      if (value1 < value2) {
+        return 1;
+      } else if( value1 > value2) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+  },
   // 跳转至查看文章详情
   redictDetail: function (e) {
     var id = e.currentTarget.id,

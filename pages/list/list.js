@@ -28,6 +28,7 @@ Page({
     displaySwiper: "block",
     floatDisplay: "none",
     searchKey:"",
+    postsCount:0,
   },
   formSubmit: function (e) {
     var url = '../list/list'
@@ -93,7 +94,6 @@ Page({
       self.setData({
         page: self.data.page + 1
       });
-      console.log('当前页' + self.data.page);
       this.fetchPostsData(self.data);
     }
     else {
@@ -110,8 +110,6 @@ Page({
       self.setData({
         categories: options.categoryID,
         isCategoryPage:"block"
-        
-       
       });
       self.fetchCategoriesData(options.categoryID);
     }
@@ -146,8 +144,8 @@ Page({
       title: '正在加载',
       mask:true
     });
-    var getPostsRequest = wxRequest.getRequest(Api.getPosts(data));
-    getPostsRequest.then(response =>{
+    var getPostsAscRequest = wxRequest.getRequest(Api.getPostsAsc(data));
+    getPostsAscRequest.then(response =>{
       if (response.statusCode === 200) {
         if (response.data.length < pageCount) {
           self.setData({
@@ -170,7 +168,7 @@ Page({
             item.date = util.cutstr(strdate, 10, 1);
             return item;
           })),
-        });         
+        });
       }else {
         if (response.data.code == "rest_post_invalid_page_number") {
           self.setData({
@@ -230,6 +228,7 @@ Page({
       self.setData({
         categoriesList: response.data,
         categoriesImage: catImage,
+        postsCount: response.data.count
         // categoriesName: response.name
       });
       wx.setNavigationBarTitle({

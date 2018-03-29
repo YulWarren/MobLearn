@@ -9,6 +9,7 @@
         <text>{{categoriesList.name}}</text>
       </view>
       <view class="topic-content-title-line"></view>
+      <view class='posts-count'>本专题共有 {{postsCount}} 小节</view>
       <view class="topic-content-brief">
         <text>{{categoriesList.description}}</text>
       </view>

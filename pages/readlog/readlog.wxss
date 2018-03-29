@@ -63,16 +63,16 @@
 .log-list {
   flex-direction: column;
   margin-left: 10rpx;
-  padding: 32rpx 0; 
+  /* padding: 15rpx 0;  */
   text-align: left;
 }
 
 .log-items {
   margin-top: 30rpx;
-  border-bottom: solid 0.5rpx #8d4bbb;
-  padding: 0rpx 0rpx 30rpx;
-  font-size: 28rpx;
-  line-height: 25rpx;
+  border-bottom: solid 0.5rpx gray;
+  padding: 0rpx 0rpx 25rpx;
+  font-size: 35rpx;
+  line-height: 35rpx;
   font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -82,8 +82,8 @@
 
 .log-text {
   margin: 32rpx 0;
-  font-size: 30rpx;
-  color: #757575;
+  font-size: 35rpx;
+  color: #8b4bbb;
   word-wrap:break-word;
   word-break:break-all; 
 }
